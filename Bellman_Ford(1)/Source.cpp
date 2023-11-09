@@ -100,6 +100,12 @@ struct DoThi* DocFile() {
     fclose(f);
     return dothi;
 }
+void XuatFile() {
+    struct DoThi* dothi = DocFile();
+    for (int i = 0; i < dothi->E; i++) {
+        printf("\t\t\t%d %d %d\n", dothi->canh[i].nguon, dothi->canh[i].dich, dothi->canh[i].trongSo);
+    }
+}
 void XuatKQTuFile() {
     struct DoThi* dothi = DocFile();
     int S = dothi->canh[0].nguon;
@@ -110,17 +116,9 @@ void XuatKQTuFile() {
     delete[] dothi->canh;
     delete dothi;
 }
-void XuatFile() {
-    struct DoThi* dothi = DocFile();
-    for (int i = 0; i < dothi->E; i++) {
-		printf("\t\t\t%d %d %d\n", dothi->canh[i].nguon, dothi->canh[i].dich, dothi->canh[i].trongSo);
-	}
-}
 void XoaManHinh() {
     system("cls");
 }
-
-#include <stdio.h>
 
 void Menu() {
     printf("\n\t\t\t****************************************************\n");
@@ -134,7 +132,6 @@ void Menu() {
     printf("\t\t\t4. Xoa man hinh\n");
     printf("\t\t\t5. Thoat\n");
 }
-
 
 int main() {
     int chon;
