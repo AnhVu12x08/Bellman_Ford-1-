@@ -42,7 +42,7 @@ void BellmanFord(struct DoThi* dothi, int nguon) {
     int* KhoangCach = new int[V]; //mảng lưu khoảng cách ngắn nhất từ đỉnh nguồn đến các đỉnh còn lại
     for (int i = 0; i < V; i++) //khởi tạo khoảng cách ngắn nhất của tất cả các đỉnh là vô cực, ngoại trừ đỉnh nguồn là 0.
         KhoangCach[i] = INT_MAX;
-    KhoangCach[nguon] = 0;
+        KhoangCach[nguon] = 0;
     for (int i = 1; i <= V - 1; i++) { //lặp lại V - 1 lần
         for (int j = 0; j < E; j++) { //duyệt qua tất cả các cạnh của đồ thị
             int u = dothi->canh[j].nguon; //lấy đỉnh nguồn và đỉnh đích của cạnh
